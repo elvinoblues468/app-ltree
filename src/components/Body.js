@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Body.css"
 
   const links = [
@@ -37,6 +38,12 @@ import "../styles/Body.css"
       value: "Design Books",
       link: "https://books.zuri.team/design-rules",
       title: "Design rules is a book that teaches you how to design beautiful and functional websites. Get it for free now.",
+    },
+    {
+      id: "contact",
+      value: "Contact",
+      link: "/contact",
+      title: "Contact",
     }
   ]
 export default function Body() {
@@ -44,9 +51,9 @@ export default function Body() {
     <div className="container">
       {links.map((link) => 
         (
-          <a href={link.link} key={link.id} title={link.title} id={link.id} className="btn">
+          <Link to={link.link} key={link.id} title={link.title} id={link.id} className="btn">
             {link.value}
-          </a>
+          </Link>
         ))
       }
       <section id="social-links" className="social-links">
